@@ -1,6 +1,8 @@
 package sets;
 
-public class Pays {
+import java.util.HashSet;
+
+public class Pays implements Comparable<Pays>{
 
 	private String nom;
 	private int nbHabitants;
@@ -65,4 +67,12 @@ public class Pays {
 		Double pib = this.nbHabitants*this.pibPerHabitant;
 		return "\n"+this.nom+" : \n"+this.nbHabitants+" habs.\n"+pib+" PIB";
 	}
+
+	@Override
+	public int compareTo(Pays arg0) {
+		
+		return this.nom.compareTo(arg0.getNom());
+	}
+	
+	
 }
