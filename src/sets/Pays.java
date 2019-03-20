@@ -70,8 +70,14 @@ public class Pays implements Comparable<Pays>{
 
 	@Override
 	public int compareTo(Pays arg0) {
-		
-		return this.nom.compareTo(arg0.getNom());
+		if(this.pibPerHabitant < arg0.getPibPerHabitant()) {
+			return -1;
+		}
+		else if(this.pibPerHabitant > arg0.getPibPerHabitant()) {
+			return 1;
+		}else {
+			return 0;
+		}
 	}
 	
 	

@@ -3,6 +3,8 @@ package maps;
 import java.util.*;
 
 import sets.Pays;
+import tri.ComparatorHabitant;
+import tri.ComparatorPibHabitant;
 
 public class TestMapPays {
 
@@ -65,12 +67,12 @@ public class TestMapPays {
 		pays.add(new Pays("Russie", 146880400, 11099.20));
 		pays.add(new Pays("Inde", 1296834042, 1626.982));
 		
-		Collections.sort(pays);
-		
 		System.out.println(pays);
+		Collections.sort(pays,new ComparatorHabitant());
+		System.out.println(pays);
+		Collections.sort(pays,new ComparatorPibHabitant());
+		System.out.println(pays);
+		
+	//fin	
 	}
-	
-	
-	
-	
 }
