@@ -20,4 +20,6 @@ public class AdressePostale {
 		nomRue = nameRue;
 		codePostale = codePost;
 	}
+	
+	
 }
