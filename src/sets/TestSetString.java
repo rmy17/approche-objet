@@ -40,7 +40,7 @@ public class TestSetString {
 		pays.add(new Pays("Chine", 1417913092, 7989.72));
 		pays.add(new Pays("Russie", 146880400, 11099.20));
 		pays.add(new Pays("Inde", 1296834042, 1626.982));
-
+		
 		double maxi = 0;
 		Pays pa = new Pays();
 		for(Pays p : pays) {
@@ -55,18 +55,20 @@ public class TestSetString {
 		Pays pay = new Pays();
 		for(Pays p : pays) {
 			double  pib = p.getNbHabitants()*p.getNbHabitants();
-			if(pib < maxi) {
+			if(pib > maxi) {
 				maxi = pib;
 				pay = p;
 			}
 		}
 		
-		System.out.println(pays);
-		double mini = 10000;
+		System.out.println(pay);
+		
+		
+		double mini = Double.MAX_VALUE;
 		Pays paa = new Pays();
 		for(Pays p : pays) {
 			double  pib = p.getNbHabitants()*p.getPibPerHabitant();
-			if(pib > mini) {
+			if(pib < mini) {
 				mini = pib;
 				paa = p;
 			}
@@ -78,11 +80,14 @@ public class TestSetString {
 		
 		System.out.println("Maj :"+pays);
 		
-		mini = 10000;
+		
+		
+		
+		mini = Double.MAX_VALUE;
 		Pays par = new Pays();
 		for(Pays p : pays) {
-			double  pib = p.getNbHabitants()*p.getNbHabitants();
-			if(pib > mini) {
+			double  pib = p.getNbHabitants()*p.getPibPerHabitant();
+			if(pib < mini) {
 				mini = pib;
 				par = p;
 			}
@@ -90,5 +95,6 @@ public class TestSetString {
 		pays.remove(par);
 
 		System.out.println(pays);
+		
 	}
 }

@@ -65,7 +65,7 @@ public class Pays implements Comparable<Pays>{
 	
 	public String toString() {
 		Double pib = this.nbHabitants*this.pibPerHabitant;
-		return "\n"+this.nom+" : \n"+this.nbHabitants+" habs.\n"+pib+" PIB";
+		return "\n"+this.nom+" : "+this.nbHabitants+" habs. "+pib+" PIB";
 	}
 
 	@Override
